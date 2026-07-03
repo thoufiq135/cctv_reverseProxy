@@ -4,7 +4,10 @@ const stream=require("./stream")
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  credentials: false
+}));
 app.use(express.json());
 
 app.get("/",(req,res)=>{
